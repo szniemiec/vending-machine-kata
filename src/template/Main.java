@@ -78,7 +78,7 @@ public class Main {
                     "3. Dime\n" +
                     "4. Quarter\n" +
                     "5. Half\n" +
-                    "6. Exit\n")) {
+                    "6. Exit")) {
                 case 1 -> vendingMachine.acceptCoin(penny);
                 case 2 -> vendingMachine.acceptCoin(nickel);
                 case 3 -> vendingMachine.acceptCoin(dime);

@@ -70,11 +70,15 @@ public class Balance {
     }
 
     public void returnChange(float change) throws CoinException {
-        int amount = Math.round(change * 100);
-        int amountOfHalves = amount / 50 % 50;
-        int amountOfQuarters = amount / 25 % 25;
-        int amountOfDimes = amount / 10 % 10;
-        int amountOfNickels = amount / 5 % 5;
+        int amount, amountOfHalves, amountOfQuarters, amountOfDimes, amountOfNickels;
+        amount = Math.round(change * 100);
+        amountOfHalves = amount / 50 % 50;
+        amount = amount - amountOfHalves * 50;
+        amountOfQuarters = (amount - amountOfHalves) / 25 % 25;
+        amount = amount - amountOfQuarters * 25;
+        amountOfDimes = amount / 10 % 10;
+        amount = amount - amountOfDimes * 10;
+        amountOfNickels = amount / 5 % 5;
 
         System.out.println("Returning change: ");
         removeCoin(half, amountOfHalves);
